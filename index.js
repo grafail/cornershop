@@ -20,12 +20,16 @@ Shop.prototype.reset = function(item){
 
 Shop.prototype.addItem = function(item){
 
-	if(!item){
+	if(!item || !item.id){
 		return;
 	}
 
 	if(!item.qty){
 		item.qty = 1;
+	}
+	
+	if(!item.name){
+		item.name = toString(item.id)
 	}
 	
 	var hit = null;
